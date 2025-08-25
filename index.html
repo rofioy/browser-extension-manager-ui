@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Browser extension manager UI</title>
+    <link rel="stylesheet" href="./dist/style.css" />
+  </head>
+  <body
+    class="font-body bg-gray-200 text-gray-900 dark:bg-darkBlue dark:text-gray-100 p-4"
+  >
+    <div class="max-w-7xl mx-auto">
+      <!-- Header -->
+      <header
+        class="flex justify-between items-center bg-gray-400 dark:bg-gray-800 rounded-2xl p-4 mb-8"
+      >
+        <div class="logo">
+          <img src="./images/logo.svg" alt="Extensions Logo" />
+        </div>
+
+        <button id="themePicker">
+          <img
+            src="./images/icon-sun.svg"
+            alt="Theme Picker"
+            class="cursor-pointer"
+          />
+        </button>
+      </header>
+      <!-- Extensions List -->
+      <nav
+        class="extensionsList flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6"
+      >
+        <h2
+          class="text-3xl text-gray-700 dark:text-gray-300 font-semibold mb-4 sm:mb-0"
+        >
+          Extensions List
+        </h2>
+        <!-- Extensions Items -->
+        <div
+          class="extensionsItems flex items-center bg-gray-300 dark:bg-gray-700 rounded-full p-1 text-sm"
+        >
+          <button
+            id="all"
+            class="px-4 py-2 rounded-full font-semibold bg-red-700 text-white"
+          >
+            All
+          </button>
+
+          <button
+            id="active"
+            class="px-4 py-2 rounded-full font-semibold text-gray-800 dark:text-gray-200"
+          >
+            Active
+          </button>
+          <button
+            id="inactive"
+            class="px-4 py-2 rounded-full font-semibold text-gray-800 dark:text-gray-200"
+          >
+            Inactive
+          </button>
+        </div>
+      </nav>
+      <!-- Grid Items -->
+      <div class="grid grid-cols-1 md:gird-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Card 1 DevLens -->
+        <div
+          class="bg-white dark:bg-gray-700/30 p-5 rounded-xl flex flex-col justify-between min-h-[180px] extension-card"
+        >
+          <!-- Card Content -->
+          <div>
+            <!-- Card Header -->
+            <div class="flex items-start gap-4">
+              <!-- Card Image -->
+              <div
+                class="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-600"
+              >
+                <img
+                  src="./images/logo-devlens.svg"
+                  class="text-white"
+                  alt="Dev Lens"
+                />
+              </div>
+              <!-- Card Text -->
+              <div>
+                <h3 class="text-lg font-bold text-gray-800 dark:text-gray-100">
+                  Dev Lens
+                </h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                  DevLens is a browser extension that helps you to find the best
+                  extensions for your needs.
+                </p>
+              </div>
+            </div>
+            <!-- Card Button -->
+            <div class="flex justify-between items-center mt-4">
+              <button
+                class="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white cursor-pointer"
+              >
+                Remove
+              </button>
+              <label class="relative inline-flex items-center cursor-pointer">
+                <input type="checkbox" value="" class="sr-only peer" checked />
+                <div
+                  class="w-11 h-6 bg-gray-400 dark:bg-gray-600 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 dark:after:border-gray-500 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-red-800"
+                ></div>
+              </label>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 StyleSpy -->
+        <div
+          class="bg-white dark:bg-gray-700/30 p-5 rounded-xl flex flex-col justify-between min-h-[180px] extension-card"
+        >
+          <!-- Card Content -->
+          <div>
+            <!-- Card Header -->
+            <div class="flex items-start gap-4">
+              <!-- Card Image -->
+              <div
+                class="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-600"
+              >
+                <img
+                  src="./images/logo-style-spy.svg"
+                  class="text-white"
+                  alt="Dev Lens"
+                />
+              </div>
+              <!-- Card Text -->
+              <div>
+                <h3 class="text-lg font-bold text-gray-800 dark:text-gray-100">
+                  StyleSpy
+                </h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                  Instantly analyze and copy CSS from any webpage element.
+                </p>
+              </div>
+            </div>
+            <!-- Card Button -->
+            <div class="flex justify-between items-center mt-4">
+              <button
+                class="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white cursor-pointer"
+              >
+                Remove
+              </button>
+              <label class="relative inline-flex items-center cursor-pointer">
+                <input type="checkbox" value="" class="sr-only peer" />
+                <div
+                  class="w-11 h-6 bg-gray-400 dark:bg-gray-600 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 dark:after:border-gray-500 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-red-800"
+                ></div>
+              </label>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 SpeedBoost -->
+        <div
+          class="bg-white dark:bg-gray-700/30 p-5 rounded-xl flex flex-col justify-between min-h-[180px] extension-card"
+        >
+          <!-- Card Content -->
+          <div>
+            <!-- Card Header -->
+            <div class="flex items-start gap-4">
+              <!-- Card Image -->
+              <div
+                class="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-600"
+              >
+                <img
+                  src="./images/logo-speed-boost.svg"
+                  class="text-white"
+                  alt="SpeedBoost"
+                />
+              </div>
+              <!-- Card Text -->
+              <div>
+                <h3 class="text-lg font-bold text-gray-800 dark:text-gray-100">
+                  SpeedBoost
+                </h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                  Optimizes browser resource usage to accelerate page loading.
+                </p>
+              </div>
+            </div>
+            <!-- Card Button -->
+            <div class="flex justify-between items-center mt-4">
+              <button
+                class="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white cursor-pointer"
+              >
+                Remove
+              </button>
+              <label class="relative inline-flex items-center cursor-pointer">
+                <input type="checkbox" value="" class="sr-only peer" />
+                <div
+                  class="w-11 h-6 bg-gray-400 dark:bg-gray-600 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 dark:after:border-gray-500 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-red-800"
+                ></div>
+              </label>
+            </div>
+          </div>
+        </div>
+        <!-- Card 4 JSON Wizard -->
+        <div
+          class="bg-white dark:bg-gray-700/30 p-5 rounded-xl flex flex-col justify-between min-h-[180px] extension-card"
+        >
+          <!-- Card Content -->
+          <div>
+            <!-- Card Header -->
+            <div class="flex items-start gap-4">
+              <!-- Card Image -->
+              <div
+                class="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-600"
+              >
+                <img
+                  src="./images/logo-json-wizard.svg"
+                  class="text-white"
+                  alt="SpeedBoost"
+                />
+              </div>
+              <!-- Card Text -->
+              <div>
+                <h3 class="text-lg font-bold text-gray-800 dark:text-gray-100">
+                  JSONWizard
+                </h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                  Formats, validates, and prettifies JSON responses in-browser
+                </p>
+              </div>
+            </div>
+            <!-- Card Button -->
+            <div class="flex justify-between items-center mt-4">
+              <button
+                class="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white cursor-pointer"
+              >
+                Remove
+              </button>
+              <label class="relative inline-flex items-center cursor-pointer">
+                <input type="checkbox" value="" class="sr-only peer" checked />
+                <div
+                  class="w-11 h-6 bg-gray-400 dark:bg-gray-600 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 dark:after:border-gray-500 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-red-800"
+                ></div>
+              </label>
+            </div>
+          </div>
+        </div>
+        <!-- Card 5 TabMaster Pro -->
+        <div
+          class="bg-white dark:bg-gray-700/30 p-5 rounded-xl flex flex-col justify-between min-h-[180px] extension-card"
+        >
+          <!-- Card Content -->
+          <div>
+            <!-- Card Header -->
+            <div class="flex items-start gap-4">
+              <!-- Card Image -->
+              <div
+                class="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-600"
+              >
+                <img
+                  src="./images/logo-tab-master-pro.svg"
+                  class="text-white"
+                  alt="SpeedBoost"
+                />
+              </div>
+              <!-- Card Text -->
+              <div>
+                <h3 class="text-lg font-bold text-gray-800 dark:text-gray-100">
+                  TabMaster Pro
+                </h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                  Organizes browser tabs into groups and sessions.
+                </p>
+              </div>
+            </div>
+            <!-- Card Button -->
+            <div class="flex justify-between items-center mt-4">
+              <button
+                class="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white cursor-pointer"
+              >
+                Remove
+              </button>
+              <label class="relative inline-flex items-center cursor-pointer">
+                <input type="checkbox" value="" class="sr-only peer" checked />
+                <div
+                  class="w-11 h-6 bg-gray-400 dark:bg-gray-600 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 dark:after:border-gray-500 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-red-800"
+                ></div>
+              </label>
+            </div>
+          </div>
+        </div>
+        <!-- Card 6 ViewportBuddy -->
+        <div
+          class="bg-white dark:bg-gray-700/30 p-5 rounded-xl flex flex-col justify-between min-h-[180px] extension-card"
+        >
+          <!-- Card Content -->
+          <div>
+            <!-- Card Header -->
+            <div class="flex items-start gap-4">
+              <!-- Card Image -->
+              <div
+                class="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-600"
+              >
+                <img
+                  src="./images/logo-viewport-buddy.svg"
+                  class="text-white"
+                  alt="SpeedBoost"
+                />
+              </div>
+              <!-- Card Text -->
+              <div>
+                <h3 class="text-lg font-bold text-gray-800 dark:text-gray-100">
+                  ViewportBuddy
+                </h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                  Simulates various screen resolutions directly within the
+                  browser.
+                </p>
+              </div>
+            </div>
+            <!-- Card Button -->
+            <div class="flex justify-between items-center mt-4">
+              <button
+                class="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white cursor-pointer"
+              >
+                Remove
+              </button>
+              <label class="relative inline-flex items-center cursor-pointer">
+                <input type="checkbox" value="" class="sr-only peer" />
+                <div
+                  class="w-11 h-6 bg-gray-400 dark:bg-gray-600 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 dark:after:border-gray-500 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-red-800"
+                ></div>
+              </label>
+            </div>
+          </div>
+        </div>
+        <!-- Card 7 Markup Notes -->
+        <div
+          class="bg-white dark:bg-gray-700/30 p-5 rounded-xl flex flex-col justify-between min-h-[180px] extension-card"
+        >
+          <!-- Card Content -->
+          <div>
+            <!-- Card Header -->
+            <div class="flex items-start gap-4">
+              <!-- Card Image -->
+              <div
+                class="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-600"
+              >
+                <img
+                  src="./images/logo-markup-notes.svg"
+                  class="text-white"
+                  alt="SpeedBoost"
+                />
+              </div>
+              <!-- Card Text -->
+              <div>
+                <h3 class="text-lg font-bold text-gray-800 dark:text-gray-100">
+                  Markup Notes
+                </h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                  Enables annotation and notes directly onto webpages for
+                  collaborative debugging.
+                </p>
+              </div>
+            </div>
+            <!-- Card Button -->
+            <div class="flex justify-between items-center mt-4">
+              <button
+                class="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white cursor-pointer"
+              >
+                Remove
+              </button>
+              <label class="relative inline-flex items-center cursor-pointer">
+                <input type="checkbox" value="" class="sr-only peer" checked />
+                <div
+                  class="w-11 h-6 bg-gray-400 dark:bg-gray-600 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 dark:after:border-gray-500 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-red-800"
+                ></div>
+              </label>
+            </div>
+          </div>
+        </div>
+        <!-- Card 8 GridGuides -->
+        <div
+          class="bg-white dark:bg-gray-700/30 p-5 rounded-xl flex flex-col justify-between min-h-[180px] extension-card"
+        >
+          <!-- Card Content -->
+          <div>
+            <!-- Card Header -->
+            <div class="flex items-start gap-4">
+              <!-- Card Image -->
+              <div
+                class="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-600"
+              >
+                <img
+                  src="./images/logo-grid-guides.svg"
+                  class="text-white"
+                  alt="SpeedBoost"
+                />
+              </div>
+              <!-- Card Text -->
+              <div>
+                <h3 class="text-lg font-bold text-gray-800 dark:text-gray-100">
+                  GridGuides
+                </h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                  Overlay customizable grids and alignment guides on any
+                  webpage.
+                </p>
+              </div>
+            </div>
+            <!-- Card Button -->
+            <div class="flex justify-between items-center mt-4">
+              <button
+                class="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white cursor-pointer"
+              >
+                Remove
+              </button>
+              <label class="relative inline-flex items-center cursor-pointer">
+                <input type="checkbox" value="" class="sr-only peer" />
+                <div
+                  class="w-11 h-6 bg-gray-400 dark:bg-gray-600 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 dark:after:border-gray-500 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-red-800"
+                ></div>
+              </label>
+            </div>
+          </div>
+        </div>
+        <!-- Card 9 Palette Picker -->
+        <div
+          class="bg-white dark:bg-gray-700/30 p-5 rounded-xl flex flex-col justify-between min-h-[180px] extension-card"
+        >
+          <!-- Card Content -->
+          <div>
+            <!-- Card Header -->
+            <div class="flex items-start gap-4">
+              <!-- Card Image -->
+              <div
+                class="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-600"
+              >
+                <img
+                  src="./images/logo-palette-picker.svg"
+                  class="text-white"
+                  alt="SpeedBoost"
+                />
+              </div>
+              <!-- Card Text -->
+              <div>
+                <h3 class="text-lg font-bold text-gray-800 dark:text-gray-100">
+                  Pallete Picker
+                </h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                  Instantly extracts color palettes from any webpage.
+                </p>
+              </div>
+            </div>
+            <!-- Card Button -->
+            <div class="flex justify-between items-center mt-4">
+              <button
+                class="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white cursor-pointer"
+              >
+                Remove
+              </button>
+              <label class="relative inline-flex items-center cursor-pointer">
+                <input type="checkbox" value="" class="sr-only peer" checked />
+                <div
+                  class="w-11 h-6 bg-gray-400 dark:bg-gray-600 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 dark:after:border-gray-500 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-red-800"
+                ></div>
+              </label>
+            </div>
+          </div>
+        </div>
+        <!-- Card 10 LinkChecker -->
+        <div
+          class="bg-white dark:bg-gray-700/30 p-5 rounded-xl flex flex-col justify-between min-h-[180px] extension-card"
+        >
+          <!-- Card Content -->
+          <div>
+            <!-- Card Header -->
+            <div class="flex items-start gap-4">
+              <!-- Card Image -->
+              <div
+                class="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-600"
+              >
+                <img
+                  src="./images/logo-link-checker.svg"
+                  class="text-white"
+                  alt="SpeedBoost"
+                />
+              </div>
+              <!-- Card Text -->
+              <div>
+                <h3 class="text-lg font-bold text-gray-800 dark:text-gray-100">
+                  LinkChecker
+                </h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                  Scans and highlights broken links on any page.
+                </p>
+              </div>
+            </div>
+            <!-- Card Button -->
+            <div class="flex justify-between items-center mt-4">
+              <button
+                class="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white cursor-pointer"
+              >
+                Remove
+              </button>
+              <label class="relative inline-flex items-center cursor-pointer">
+                <input type="checkbox" value="" class="sr-only peer" checked />
+                <div
+                  class="w-11 h-6 bg-gray-400 dark:bg-gray-600 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 dark:after:border-gray-500 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-red-800"
+                ></div>
+              </label>
+            </div>
+          </div>
+        </div>
+        <!-- Card 11 DOM Snapshot -->
+        <div
+          class="bg-white dark:bg-gray-700/30 p-5 rounded-xl flex flex-col justify-between min-h-[180px] extension-card"
+        >
+          <!-- Card Content -->
+          <div>
+            <!-- Card Header -->
+            <div class="flex items-start gap-4">
+              <!-- Card Image -->
+              <div
+                class="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-600"
+              >
+                <img
+                  src="./images/logo-dom-snapshot.svg"
+                  class="text-white"
+                  alt="SpeedBoost"
+                />
+              </div>
+              <!-- Card Text -->
+              <div>
+                <h3 class="text-lg font-bold text-gray-800 dark:text-gray-100">
+                  DOM Snapshot
+                </h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                  Capture and export DOM structures quickly.
+                </p>
+              </div>
+            </div>
+            <!-- Card Button -->
+            <div class="flex justify-between items-center mt-4">
+              <button
+                class="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white cursor-pointer"
+              >
+                Remove
+              </button>
+              <label class="relative inline-flex items-center cursor-pointer">
+                <input type="checkbox" value="" class="sr-only peer" />
+                <div
+                  class="w-11 h-6 bg-gray-400 dark:bg-gray-600 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 dark:after:border-gray-500 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-red-800"
+                ></div>
+              </label>
+            </div>
+          </div>
+        </div>
+        <!-- Card 12 ConsolePlus -->
+        <div
+          class="bg-white dark:bg-gray-700/30 p-5 rounded-xl flex flex-col justify-between min-h-[180px] extension-card"
+        >
+          <!-- Card Content -->
+          <div>
+            <!-- Card Header -->
+            <div class="flex items-start gap-4">
+              <!-- Card Image -->
+              <div
+                class="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-600"
+              >
+                <img
+                  src="./images/logo-console-plus.svg"
+                  class="text-white"
+                  alt="SpeedBoost"
+                />
+              </div>
+              <!-- Card Text -->
+              <div>
+                <h3 class="text-lg font-bold text-gray-800 dark:text-gray-100">
+                  ConsolePlus
+                </h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                  Enhanced developer console with advanced filtering and
+                  logging.
+                </p>
+              </div>
+            </div>
+            <!-- Card Button -->
+            <div class="flex justify-between items-center mt-4">
+              <button
+                class="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white cursor-pointer"
+              >
+                Remove
+              </button>
+              <label class="relative inline-flex items-center cursor-pointer">
+                <input type="checkbox" value="" class="sr-only peer" checked />
+                <div
+                  class="w-11 h-6 bg-gray-400 dark:bg-gray-600 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 dark:after:border-gray-500 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-red-800"
+                ></div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./dist/script.js"></script>
+  </body>
+</html>
